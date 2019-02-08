@@ -1,0 +1,2853 @@
+<Grid Margin="0,0,-8,-20">
+        <Label x:Name="SId" Content="StudentId:" HorizontalAlignment="Left" Margin="110,116,0,0" VerticalAlignment="Top" FontSize="15" FontWeight="Bold"/>
+        <Label x:Name="SPhone" Content="StudentPhoneNo:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="110,309,0,0" FontSize="15" FontWeight="Bold"/>
+        <Label x:Name="SName" Content="StudentName:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="110,158,0,0" FontSize="15" FontWeight="Bold"/>
+        <Label x:Name="SEmail" Content="StudentEmail:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="110,257,0,0" FontSize="15" FontWeight="Bold"/>
+        <Label x:Name="SDept" Content="StudentDept:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="110,202,0,0" FontSize="15" FontWeight="Bold"/>
+        <Label x:Name="SGrade" Content="StudentGrade:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="110,367,0,0" FontSize="15" FontWeight="Bold"/>
+        <Label x:Name="SMS" Content="STUDENT MANAGEMENT SYSTEM" HorizontalAlignment="Left" Margin="185,42,0,0" VerticalAlignment="Top" FontWeight="Bold" FontSize="16" Background="#FF2CA7EE"/>
+
+        <TextBox x:Name="TBStudentID" HorizontalAlignment="Left" Height="30" Margin="343,116,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="227"/>
+        <TextBox x:Name="TBStudentPH" HorizontalAlignment="Left" Height="30" TextWrapping="Wrap" VerticalAlignment="Top" Width="226" Margin="343,158,0,0"/>
+        <TextBox x:Name="TBStudentMail" HorizontalAlignment="Left" Height="30" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="226" Margin="343,257,0,0"/>
+        <TextBox x:Name="TBStudentPhone" HorizontalAlignment="Left" Height="30" Margin="342,309,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="227"/>
+        <ComboBox x:Name="CBStudentDept"  HorizontalAlignment="Left" Margin="342,210,0,0" VerticalAlignment="Top" Width="226">
+            <ComboBoxItem Content="CSE"/>
+            <ComboBoxItem Content="ECE"/>
+            <ComboBoxItem Content="Mech"/>
+        </ComboBox>
+-----------------------------------------
+
+        <RadioButton x:Name="BtnGradeA" Content="A" HorizontalAlignment="Left" Margin="343,381,0,0" VerticalAlignment="Top" RenderTransformOrigin="-1.943,0.559"/>
+        <RadioButton x:Name="BtnGradeB" Content="B" HorizontalAlignment="Left" Margin="468,384,0,0" VerticalAlignment="Top"/>
+        <RadioButton x:Name="BtnGradeC" Content="C" HorizontalAlignment="Left" Margin="344,409,0,0" VerticalAlignment="Top"/>
+        <RadioButton x:Name="BtnGradeD" Content="D" HorizontalAlignment="Left" Margin="468,412,0,0" VerticalAlignment="Top"/>
+        <Button x:Name="BtnSubmit" Content="Submit" HorizontalAlignment="Left" Margin="251,487,0,0" VerticalAlignment="Top" Width="91" Height="36"/>
+        <Button x:Name="BtnReset" Content="Reset" HorizontalAlignment="Left" Margin="405,487,0,0" VerticalAlignment="Top" Width="87" Height="36"/>
+        
+    </Grid>
+
+Create table Gautam.Student(
+RollNo int identity(1,1) Primary Key,
+StudentName Varchar(30),
+Gender varchar(10),
+DOB datetime,
+FeePaid money,
+MobileNo varchar(10),
+Email varchar(30));
+
+drop table Gautam.Student;
+
+select * from Gautam.Student;
+
+Insert into Gautam.Student (StudentName,Gender,DOB,FeePaid,MobileNo,Email) Values ('Gautam','Male','04/04/1996',12000.00,'9944847399','dwarakabgk@gmail.com')
+Insert into Gautam.Student (StudentName,Gender,DOB,FeePaid,MobileNo,Email) Values ('Vikram','Male','11/04/1996',12456.00,'9944847388','vikram@gmail.com')
+Insert into Gautam.Student (StudentName,Gender,DOB,FeePaid,MobileNo,Email) Values ('Lalit','Male','12/04/1996',15000.00,'9944637388','Lalit@gmail.com')
+
+select * from Gautam.Student;
+update Gautam.student Set StudentName='Gautam Krishna',Feepaid=15000 where RollNo=3;
+delete Gautam.student where RollNo=1;
+delete Gautam.student where RollNo=5;
+
+select count(*) from gautam.Student;
+
+
+
+
+
+
+
+
+---------------------------------------------------------
+
+
+
+<Grid>
+        <StackPanel>
+            <Label Margin="3" HorizontalAlignment="Center" >
+                Enter Student Details
+            </Label>
+
+            <Grid Margin="0,10,0,0" Focusable="False">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"></RowDefinition>
+                    <RowDefinition Height="Auto"></RowDefinition>
+                    <RowDefinition Height="Auto"></RowDefinition>
+                    <RowDefinition Height="Auto"></RowDefinition>
+                    <RowDefinition Height="Auto"></RowDefinition>
+                    <RowDefinition Height="Auto"></RowDefinition>
+                    <RowDefinition Height="Auto"></RowDefinition>
+                    <RowDefinition Height="Auto"></RowDefinition>
+
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"></ColumnDefinition>
+                    <ColumnDefinition Width="*" MinWidth="50" MaxWidth="800"></ColumnDefinition>
+
+                </Grid.ColumnDefinitions>
+
+                <Label x:Name="idlable" Content="Student Id" Margin="3" Grid.Row="0" Grid.Column="0" VerticalAlignment="Center"/>
+                <TextBox x:Name="idtextBox" TextWrapping="Wrap" Text="TextBox" Margin="3" Grid.Row="0" Grid.Column="1" VerticalAlignment="Center"/>
+
+                <Label x:Name="namelable" Content="Name" Margin="3" Grid.Row="1" Grid.Column="0" VerticalAlignment="Center"/>
+                <TextBox x:Name="nametextBox" TextWrapping="Wrap" Text="TextBox" Margin="3" Grid.Row="1" Grid.Column="1" VerticalAlignment="Center"/>
+
+                <Label x:Name="Genderlbl" Content="Gender" Margin="3" Grid.Row="2" Grid.Column="0" VerticalAlignment="Center"/>
+                <TextBox x:Name="gendertbx" TextWrapping="Wrap" Text="TextBox" Margin="3" Grid.Row="2" Grid.Column="1" VerticalAlignment="Center"/>
+
+                <Label x:Name="DOB_lbl" Content="DOB" Margin="3" Grid.Row="3" Grid.Column="0" VerticalAlignment="Center"/>
+                <TextBox x:Name="DOB_txt" TextWrapping="Wrap" Text="TextBox" Margin="3" Grid.Row="3" Grid.Column="1" VerticalAlignment="Center"/>
+
+                <Label x:Name="Fee_lbl" Content="Fee Paid" Margin="3" Grid.Row="4" Grid.Column="0" VerticalAlignment="Center"/>
+                <TextBox x:Name="Fee_txt" TextWrapping="Wrap" Text="TextBox" Margin="3" Grid.Row="4" Grid.Column="1" VerticalAlignment="Center"/>
+                
+                <Label x:Name="MobileNo_lbl" Content="Mobile No" Margin="3" Grid.Row="5" Grid.Column="0" VerticalAlignment="Center"/>
+                <TextBox x:Name="Mobile_txt" TextWrapping="Wrap" Text="TextBox" Margin="3" Grid.Row="5" Grid.Column="1" VerticalAlignment="Center"/>
+
+                <Label x:Name="Email_lbl" Content="Email" Margin="3" Grid.Row="6" Grid.Column="0" VerticalAlignment="Center"/>
+                <TextBox x:Name="Email_txt" TextWrapping="Wrap" Text="TextBox" Margin="3" Grid.Row="6" Grid.Column="1" VerticalAlignment="Center"/>
+
+                <Button x:Name="buttonSubmit"  Content="SUBMIT" Margin="3" Grid.Row="7" Grid.Column="0" VerticalAlignment="Center" Width="81" Height="22"/>
+                <Button x:Name="buttonReset" Content="RESET" Margin="3" Grid.Row="7" Grid.Column="1" VerticalAlignment="Center" Width="81" Height="22"/>
+            </Grid>
+        </StackPanel>
+
+
+    </Grid>
+    <Window.Resources>
+        <Style x:Key="ButtonStyle">
+            <Style.Setters>
+                <Setter Property="Control.Background"  Value="Yellow"/>
+                <!--><Setter Property="Button.Foreground"  Value="Green"/>-->
+            </Style.Setters>
+        </Style>
+        <Style TargetType="Label">
+            <Style.Triggers>
+                <Trigger Property="Control.IsMouseOver" Value="True">
+                    <Setter Property="Control.Background" Value="Green"/>
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+    </Window.Resources>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+-------------------------------------------------------------------------
+
+
+<Window x:Class="Demo1_WpfPL.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="MainWindow" Height="350" Width="525" Loaded="Window_Loaded">
+    <Grid Margin="10">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="auto"/>
+            <ColumnDefinition Width="auto"/>
+            <ColumnDefinition Width="auto"/>
+            <ColumnDefinition Width="auto"/>
+        </Grid.ColumnDefinitions>
+        <TextBlock Text="Product Maintainance System" FontSize="16" Grid.ColumnSpan="4" HorizontalAlignment="Center" Grid.Row="0" Grid.Column="0" Margin="10,0,10,20"/>        
+        <TextBlock Text="Product Name" Grid.Row="1" Grid.Column="0" Margin="5"/>
+        <TextBlock Text="Price" Grid.Row="2" Grid.Column="0" Margin="5"/>
+        <TextBlock Text="Expiry Date" Grid.Row="3" Grid.Column="0" Margin="5"/>
+        
+        <!--<TextBox Name="txtProdName" Grid.Row="1" Grid.Column="1" Width="140" Margin="5" Text="{Binding ElementName=lbProdNames, Path=SelectedItem.ProdName}"/>-->
+        <ComboBox Name="cmbProdName" Grid.Row="1" Grid.Column="1" Width="140" Margin="5" IsEditable="True" />
+        <TextBox Name="txtPrice" Height="20" Grid.Row="2" Grid.Column="1" Width="140" Margin="5" Text="{Binding ElementName=cmbProdName, Path=SelectedItem.Price}"/>
+        <DatePicker Name="dpExpDate" Grid.Row="3" Grid.Column="1" Width="140" Margin="5" Text="{Binding ElementName=cmbProdName, Path=SelectedItem.ExpDate}" />        
+        <StackPanel Orientation="Horizontal" Background="LightBlue" Grid.ColumnSpan="4" Grid.Row="4" Grid.Column="0">            
+            <Button Name="btnInsert" Content="Add New" Width="80" Margin="5" Click="btnInsert_Click" />
+            <Button Name="btnUpdate" Content="Update" Width="80" Margin="5" Click="btnUpdate_Click" />
+            <Button Name="btnDelete" Content="Delete" Width="80" Margin="5" Click="btnDelete_Click" />        
+        </StackPanel>
+        <DataGrid Name="dgProducts" Grid.Row="5" Grid.Column="0" Grid.ColumnSpan="4" Height="120" MaxHeight="120" />
+        <TextBlock Name="txtTotalCount" Grid.ColumnSpan="4" Grid.Row="6" Grid.Column="0" Margin="10"/>
+        <!--<StackPanel>
+            <DataGrid Name="dgProducts" Margin="10" />
+            <Button Name="btnInsert" Content="Insert" Height="22" Width="120" Margin="10" Click="btnInsert_Click"/>
+            <Button Name="btnUpdate" Content="Update" Height="22" Width="120" Margin="10" Click="btnUpdate_Click"/>
+            <Button Name="btnDelete" Content="Delete" Height="22" Width="120" Margin="10" Click="btnDelete_Click"/>
+            
+        </StackPanel>-->
+        
+    </Grid>
+</Window>
+---------------------------------------------------------------------------------------------------------
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows;
+using System.Windows.Controls;
+using System.Windows.Data;
+using System.Windows.Documents;
+using System.Windows.Input;
+using System.Windows.Media;
+using System.Windows.Media.Imaging;
+using System.Windows.Navigation;
+using System.Windows.Shapes;
+using Demo1_BAL;
+using Demo1_Entities;
+using Demo1_Exceptions;
+using System.Configuration;
+
+namespace Demo1_WpfPL
+{
+    /// <summary>
+    /// Interaction logic for MainWindow.xaml
+    /// </summary>
+    public partial class MainWindow : Window
+    {
+        ProductBAL bal = null;
+
+        public MainWindow()
+        {
+            InitializeComponent();
+            //bal = new ProductBAL(@"Data Source=ndamssql\sqlilearn;Initial Catalog=16MayCHN;User ID=sqluser;Password=sqluser");
+            bal = new ProductBAL(ConfigurationManager.ConnectionStrings["cn1"].ConnectionString);
+        }
+
+        private void Window_Loaded(object sender, RoutedEventArgs e)
+        {            
+            try
+            {
+                List<Product> prods = bal.GetAll().ToList();
+                dgProducts.ItemsSource = prods;                
+                cmbProdName.ItemsSource = prods;
+                cmbProdName.DisplayMemberPath = "ProdName";               
+                txtTotalCount.Text = bal.GetProductCount().ToString();
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+    
+        private void btnInsert_Click(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                if (btnInsert.Content.ToString() == "Add New")
+                {
+                    cmbProdName.IsEditable = true;
+                    cmbProdName.Text = string.Empty;                    
+                    btnInsert.Content = "Insert";                  
+                }
+                else if (btnInsert.Content.ToString() == "Insert")
+                {
+                    Product p = new Product();
+                    p.ProdName = cmbProdName.Text;
+                    p.ExpDate = (DateTime)dpExpDate.SelectedDate;
+                    p.Price = decimal.Parse(txtPrice.Text);
+                    bal.Add(p);
+                    MessageBox.Show("Inserted!");
+                    dgProducts.ItemsSource = bal.GetAll();
+                    txtTotalCount.Text = bal.GetProductCount().ToString();
+                    btnInsert.Content = "Add New";                    
+                }
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void btnUpdate_Click(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                Product p = (Product)cmbProdName.SelectedItem;
+                p.ProdName = cmbProdName.Text;
+                p.ExpDate = (DateTime)dpExpDate.SelectedDate;
+                p.Price = decimal.Parse(txtPrice.Text);
+                bal.Modify(p);
+                MessageBox.Show("Updated!");
+                dgProducts.ItemsSource = bal.GetAll();
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void btnDelete_Click(object sender, RoutedEventArgs e)
+        {
+            try
+            { 
+                Product p = (Product)cmbProdName.SelectedItem;
+                bal.Remove(p.Id);
+                MessageBox.Show("Deleted!");
+                dgProducts.ItemsSource = bal.GetAll();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+       
+
+     
+    }
+}
+--------------------------------------------------------------------------------------------------------------
+
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+using Demo1_Entities;
+using Demo1_DAL;
+
+namespace Demo1_BAL
+{    
+    public class ProductBAL
+    {
+        ProductDAL dal = null;
+
+        public ProductBAL(string conString)
+        {
+            dal = new ProductDAL(conString);
+        }
+
+        public int Add(Product prod)
+        {
+            try
+            {
+                return dal.Insert(prod);
+            }
+            catch(Exception ex)
+            {
+                throw;
+            }
+        }
+        public int Modify(Product prod)
+        {
+            try
+            {
+                return dal.Update(prod);
+            }
+            catch (Exception ex)
+            {
+                throw;
+            }            
+        }
+        public int Remove(int id)
+        {
+            try
+            {
+                return dal.Delete(id);
+            }
+            catch (Exception ex)
+            {
+                throw;
+            }                 
+        }
+        public Product GetBy(int id)
+        {
+            try
+            {
+                return dal.SelectBy(id);
+            }
+            catch (Exception ex)
+            {
+                throw;
+            }           
+        }
+        public IEnumerable<Product> GetAll()
+        {
+            try
+            {
+                return dal.SelectAll();
+            }
+            catch (Exception ex)
+            {
+                throw;
+            }              
+        }
+
+        public int GetProductCount()
+        {
+            try
+            {
+                return dal.SelectProductCount();
+            }
+            catch (Exception ex)
+            {
+                throw;
+            }     
+        }
+     
+    }
+}
+----------------------------------------------------------------------------------
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Data.SqlClient;
+using Demo1_Entities;
+using Demo1_Exceptions;
+
+namespace Demo1_DAL
+{
+    public class ProductDAL
+    {       
+        SqlConnection cn = null;
+        SqlCommand cmd = null;
+        SqlDataReader dr = null;
+
+        public ProductDAL(string conString)
+        {
+            cn = new SqlConnection(conString);
+        }
+
+        public int Insert(Product prod)
+        {
+            int no = 0;
+            try
+            {
+                //cmd = new SqlCommand("insert into dbo.M3_132419_Product(ProdName, Price, ExpDate) values('" + prod.ProdName + "', '" + prod.Price + "', '" + prod.ExpDate + "')", cn);
+                //cmd = new SqlCommand("insert into dbo.M3_132419_Product(ProdName, Price, ExpDate) values(@pName, @price, @expDate)", cn);
+                cmd = new SqlCommand("[dbo].[SPX_Insert_M3_132419_Product]", cn);
+                cmd.Parameters.AddWithValue("@pName", prod.ProdName);
+                cmd.Parameters.AddWithValue("@price", prod.Price);
+                cmd.Parameters.AddWithValue("@expDate", prod.ExpDate);
+                cmd.CommandType = System.Data.CommandType.StoredProcedure;
+                cn.Open();
+                no = cmd.ExecuteNonQuery();     
+        
+            }
+            catch(ProductException pex)
+            {
+                throw;
+            }
+            catch(Exception ex)
+            {
+                throw;
+            }
+            finally
+            {
+                cn.Close();
+            }
+            return no;
+        }
+
+        public int Update(Product prod)
+        {
+            int no = 0;
+            try
+            {
+                cmd = new SqlCommand("update dbo.M3_132419_Product set ProdName = '" + 
+                    prod.ProdName + "', Price = '" + prod.Price + "', ExpDate = '" + prod.ExpDate + 
+                    "' where Id = "+prod.Id, cn);
+                cn.Open();
+                no = cmd.ExecuteNonQuery();
+            }
+            catch (ProductException pex)
+            {
+                throw;
+            }
+            catch (Exception ex)
+            {
+                throw;
+            }
+            finally
+            {
+                cn.Close();
+            }
+            return no;
+        }
+
+        public int Delete(int prodId)
+        {
+            int no = 0;
+            try
+            {
+                cmd = new SqlCommand("delete from dbo.M3_132419_Product where Id = " + prodId, cn);
+                cn.Open();
+                no = cmd.ExecuteNonQuery();
+            }
+            catch (ProductException pex)
+            {
+                throw;
+            }
+            catch (Exception ex)
+            {
+                throw;
+            }
+            finally
+            {
+                cn.Close();
+            }
+            return no;
+        }
+
+        public IEnumerable<Product> SelectAll()
+        {
+            List<Product> prods = new List<Product>();
+            try
+            {
+                cmd = new SqlCommand("select * from dbo.M3_132419_Product", cn);
+                cn.Open();
+                dr = cmd.ExecuteReader();
+                if (dr.HasRows)
+                {
+                    while (dr.Read())
+                    {
+                        Product p = new Product();
+                        p.Id = (int)dr[0];
+                        p.ProdName = dr[1].ToString();
+                        p.Price = (decimal)dr[2];
+                        p.ExpDate = (DateTime) dr[3];
+                        prods.Add(p);
+                    }
+                }
+            }
+            catch (ProductException pex)
+            {
+                throw;
+            }
+            catch (Exception ex)
+            {
+                throw;
+            }
+            finally
+            {
+                dr.Close();
+                cn.Close();
+            }
+            return prods;
+        }
+
+        public Product SelectBy(int prodId)
+        {
+            Product p = null;
+            try
+            {
+                cmd = new SqlCommand("select * from dbo.M3_132419_Product where Id = "+prodId, cn);
+                cn.Open();
+                dr = cmd.ExecuteReader();
+                if (dr.HasRows)
+                {
+                    if (dr.Read())
+                    {
+                        p = new Product();
+                        p.Id = (int)dr[0];
+                        p.ProdName = dr[1].ToString();
+                        p.Price = (decimal)dr[2];
+                        p.ExpDate = (DateTime)dr[3];
+                    }
+                }
+            }
+            catch (ProductException pex)
+            {
+                throw;
+            }
+            catch (Exception ex)
+            {
+                throw;
+            }
+            finally
+            {
+                dr.Close();
+                cn.Close();
+            }
+            return p;
+        }
+
+        public int SelectProductCount()
+        {
+            int count = 0 ;
+            try
+            {
+                cmd = new SqlCommand("select count(Id) from dbo.M3_132419_Product", cn);
+                cn.Open();
+                count = (int) cmd.ExecuteScalar();              
+            }
+            catch (ProductException pex)
+            {
+                throw;
+            }
+            catch (Exception ex)
+            {
+                throw;
+            }
+            finally
+            {               
+                cn.Close();
+            }
+            return count;
+        }
+    }
+}
+----------------------------------------------------------------------------------------
+
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Demo1_Entities
+{
+    public class Product
+    {
+        public int Id { get; set; }
+        public string ProdName { get; set; }
+        public decimal Price { get; set; }
+        public DateTime ExpDate { get; set; }
+    }
+}
+
+
+---------------------------------------------------------------
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Demo1_Exceptions
+{
+    public class ProductException: Exception
+    {
+        public ProductException() { }
+
+        public ProductException(string message)
+            :base (message)
+        { }
+    }
+}
+
+
+------------------------------------------------------------------------
+--------------------------------------------------------------------------
+
+
+my Codes
+
+
+---------------------------------------------------------------------
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace SMS_Entities
+{
+    public class Student
+    {
+        public int RollNo { get; set; }
+
+        public String StudName{ get; set; }
+
+        public String Gender { get; set; }
+
+        public DateTime DOB{ get; set; }
+
+        public double FeePaid { get; set; }
+
+        public String MobileNo { get; set; }
+
+        public String Email { get; set; }
+
+    }
+}
+------------------------------------------------------------
+
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace SMS.Exceptions
+{
+    public class StudentException : Exception
+    {
+        public StudentException(String errMsg) : base(errMsg)
+        {
+               
+        }
+    }
+}
+----------------------------------------------------------------------------------------
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using SMS.Exceptions;
+
+using SMS_Entities;
+
+using System.Data.SqlClient;
+
+namespace SMS.DAL
+{
+    public class StudentDAL
+    {
+        //SelectAll
+        SqlConnection cn = null;
+        SqlCommand cmd = null;
+        SqlDataReader dr = null;
+        public StudentDAL()
+        {
+            cn = new SqlConnection(@"Data Source=NDAMSSQL\SQLILEARN;Initial Catalog=8Aug_Sipcot;User ID=sqluser;Password=sqluser");
+        }
+
+        public List<Student> SelectAll()
+        {
+            List<Student> Studs = new List<Student>();
+            try
+            {
+                cmd = new SqlCommand("select * from Lalith.Student", cn);
+                cn.Open();
+                dr = cmd.ExecuteReader();
+                
+                while(dr.Read())
+                {
+                    Student s = new Student();
+                    s.RollNo =  Convert.ToInt32(dr[0]);
+                    s.StudName = dr[1].ToString();
+                    s.Gender = dr[2].ToString();
+                    s.DOB = Convert.ToDateTime(dr[3]);
+                    s.FeePaid = Convert.ToDouble(dr[4]);
+                    s.MobileNo = dr[5].ToString();
+                    s.Email = dr[6].ToString();
+
+                    Studs.Add(s);
+                }
+
+            }
+            catch (StudentException ex1)
+            {
+                throw ex1;
+            }
+            catch (Exception ex2)
+            {
+                throw ex2;
+            }
+            finally
+            {
+                dr.Close();
+                cn.Close();
+            }
+
+            return Studs;
+        }
+
+
+        public int Insert(Student stud)
+        {
+
+            int no = 0;
+            try
+            {
+                cmd = new SqlCommand("insert into Lalith.Student(StudName, Gender, DOB, FeePaid, MobileNo, Email) values('" + stud.StudName + "', '" + stud.Gender + "', '" + stud.DOB + "', " + stud.FeePaid + ", '" + stud.MobileNo + "', '" + stud.Email + "')", cn);
+                cn.Open();
+                no = cmd.ExecuteNonQuery();
+                
+            }
+            catch(StudentException ex1)
+            {
+                throw ex1;
+            }
+            catch(Exception ex2)
+            {
+                throw ex2;
+            }
+            finally
+            {
+                cn.Close();
+            }
+            return no;
+
+        }
+
+
+        public int Update(Student stud)
+        {
+            int no = 0;
+            try
+            {
+                cmd = new SqlCommand("update Lalith.Student set StudName='"+stud.StudName+"', Gender = '"+stud.Gender+"',DOB = '"+stud.DOB+"',FeePaid = "+stud.FeePaid+",MpbileNo = '"+stud.MobileNo+"',Email = '"+stud.Email+"' where RollNo = "+stud.RollNo, cn);
+                cn.Open();
+                no = cmd.ExecuteNonQuery();
+
+            }
+            catch (StudentException ex1)
+            {
+                throw ex1;
+            }
+            catch (Exception ex2)
+            {
+                throw ex2;
+            }
+            finally
+            {
+                cn.Close();
+            }
+            return no;
+
+        }
+
+
+        public int Delete(int RollNo)
+        {
+            int no = 0;
+            try
+            {
+                cmd = new SqlCommand("delete Lalith.Student where RollNo = " + RollNo, cn);
+                cn.Open();
+                no = cmd.ExecuteNonQuery();
+
+            }
+            catch (StudentException ex1)
+            {
+                throw ex1;
+            }
+            catch (Exception ex2)
+            {
+                throw ex2;
+            }
+            finally
+            {
+                cn.Close();
+            }
+            return no;
+
+        }
+
+
+
+    }
+}
+---------------------------------------------------------------------------------------
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using SMS_Entities;
+using SMS.DAL;
+using SMS.Exceptions;
+
+namespace SMS.BLL
+{
+    public class StudentBLL
+    {
+        StudentDAL dal = null;
+
+        public StudentBLL()
+        {
+            dal = new StudentDAL();
+        }
+
+        public List<Student> GetAll()
+        {
+            List<Student> studs = null;
+            try
+            {
+                studs = dal.SelectAll();
+            }
+            catch(StudentException ex1)
+            {
+                throw ex1;
+            }
+            catch(Exception ex2)
+            {
+                throw ex2;
+            }
+            return studs;
+        }
+
+        public int Add(Student stud)
+        {
+
+            int no = 0;
+            try
+            {
+              no= dal.Insert(stud);
+            }
+            catch (StudentException ex1)
+            {
+                throw ex1;
+            }
+            catch (Exception ex2)
+            {
+                throw ex2;
+            }
+            return no;
+        }
+
+        public int Edit(Student stud)
+        {
+            int no = 0;
+            try
+            {
+               no = dal.Update(stud);
+            }
+            catch (StudentException ex1)
+            {
+                throw ex1;
+            }
+            catch (Exception ex2)
+            {
+                throw ex2;
+            }
+            return no;
+        }
+
+        public int Remove(int rollNo)
+        {
+            int no = 0;
+            try
+            {
+               no = dal.Delete(rollNo);
+            }
+            catch (StudentException ex1)
+            {
+                throw ex1;
+            }
+            catch (Exception ex2)
+            {
+                throw ex2;
+            }
+            return no;
+        }
+
+    }
+}
+----------------------------------------------------------
+List
+
+------------
+<Window x:Class="WPF.PL.ListView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WPF.PL"
+        mc:Ignorable="d"
+        Title="ListView" Height="300" Width="300">
+    <DockPanel>
+        <Grid >
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition />
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+            </Grid.RowDefinitions>
+            <ListBox HorizontalAlignment="Left" Margin="5,5,5,5" Grid.RowSpan="4" 
+          Width="200" Grid.Row="0" Grid.Column="0" Name="booksList" 
+          ItemsSource="{Binding}"/>
+        </Grid>
+    </DockPanel>
+</Window>
+-----------------------------------------------------
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows;
+using System.Windows.Controls;
+using System.Windows.Data;
+using System.Windows.Documents;
+using System.Windows.Input;
+using System.Windows.Media;
+using System.Windows.Media.Imaging;
+using System.Windows.Shapes;
+using SMS.BLL;
+using SMS_Entities;
+namespace WPF.PL
+{
+    /// <summary>
+    /// Interaction logic for ListView.xaml
+    /// </summary>
+    public partial class ListView : Window
+    {
+        StudentBLL details = new StudentBLL();
+        Student stu = new Student();
+        public ListView()
+        {
+            InitializeComponent();
+            booksList.ItemsSource = details.GetAll();
+        }
+    }
+}
+----------------------------------------------
+MainWindow
+----------------------------------------------
+<Window x:Class="WPF.PL.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WPF.PL"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="400" Width="525">
+    <Grid>
+        <StackPanel>
+            <Label Margin="3" HorizontalAlignment="Center" >
+                Enter Student Details
+            </Label>
+
+            <Grid Margin="0,10,0,0" Focusable="False">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"></RowDefinition>
+                    <RowDefinition Height="Auto"></RowDefinition>
+                    <RowDefinition Height="Auto"></RowDefinition>
+                    <RowDefinition Height="Auto"></RowDefinition>
+                    <RowDefinition Height="Auto"></RowDefinition>
+                    <RowDefinition Height="Auto"></RowDefinition>
+                    <RowDefinition Height="Auto"></RowDefinition>
+                    <RowDefinition Height="Auto"></RowDefinition>
+
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"></ColumnDefinition>
+                    <ColumnDefinition Width="*" MinWidth="50" MaxWidth="800"></ColumnDefinition>
+
+                </Grid.ColumnDefinitions>
+
+                <Label x:Name="idlable" Content="Student Id" Margin="3" Grid.Row="0" Grid.Column="0" VerticalAlignment="Center"/>
+                <TextBox x:Name="idtextBox" TextWrapping="Wrap" Text="TextBox" Margin="3" Grid.Row="0" Grid.Column="1" VerticalAlignment="Center"/>
+
+                <Label x:Name="namelable" Content="Name" Margin="3" Grid.Row="1" Grid.Column="0" VerticalAlignment="Center"/>
+                <TextBox x:Name="nametextBox" TextWrapping="Wrap" Text="TextBox" Margin="3" Grid.Row="1" Grid.Column="1" VerticalAlignment="Center"/>
+
+                <Label x:Name="Genderlbl" Content="Gender" Margin="3" Grid.Row="2" Grid.Column="0" VerticalAlignment="Center"/>
+                <TextBox x:Name="gendertbx" TextWrapping="Wrap" Text="TextBox" Margin="3" Grid.Row="2" Grid.Column="1" VerticalAlignment="Center"/>
+
+                <Label x:Name="DOB_lbl" Content="DOB" Margin="3" Grid.Row="3" Grid.Column="0" VerticalAlignment="Center"/>
+                <TextBox x:Name="DOB_txt" TextWrapping="Wrap" Text="TextBox" Margin="3" Grid.Row="3" Grid.Column="1" VerticalAlignment="Center"/>
+
+                <Label x:Name="Fee_lbl" Content="Fee Paid" Margin="3" Grid.Row="4" Grid.Column="0" VerticalAlignment="Center"/>
+                <TextBox x:Name="Fee_txt" TextWrapping="Wrap" Text="TextBox" Margin="3" Grid.Row="4" Grid.Column="1" VerticalAlignment="Center"/>
+
+                <Label x:Name="MobileNo_lbl" Content="Mobile No" Margin="3" Grid.Row="5" Grid.Column="0" VerticalAlignment="Center"/>
+                <TextBox x:Name="Mobile_txt" TextWrapping="Wrap" Text="TextBox" Margin="3" Grid.Row="5" Grid.Column="1" VerticalAlignment="Center"/>
+
+                <Label x:Name="Email_lbl" Content="Email" Margin="3" Grid.Row="6" Grid.Column="0" VerticalAlignment="Center"/>
+                <TextBox x:Name="Email_txt" TextWrapping="Wrap" Text="TextBox" Margin="3" Grid.Row="6" Grid.Column="1" VerticalAlignment="Center"/>
+
+                <Button x:Name="buttonSubmit"  Content="SUBMIT" Margin="3,3,3,0" Grid.Row="7" Grid.Column="0" VerticalAlignment="Top" Width="81" Height="22" Click="buttonSubmit_Click"/>
+                <Button x:Name="buttonReset" Content="RESET" Margin="3" Grid.Row="7" Grid.Column="1" VerticalAlignment="Center" Width="81" Height="22"/>
+            </Grid>
+        </StackPanel>
+
+
+    </Grid>
+    <Window.Resources>
+        <Style x:Key="ButtonStyle">
+            <Style.Setters>
+                <Setter Property="Control.Background"  Value="Yellow"/>
+                <!--><Setter Property="Button.Foreground"  Value="Green"/>-->
+            </Style.Setters>
+        </Style>
+        <Style TargetType="Label">
+            <Style.Triggers>
+                <Trigger Property="Control.IsMouseOver" Value="True">
+                    <Setter Property="Control.Background" Value="Green"/>
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+    </Window.Resources>
+</Window>
+
+-----------------------------------------------------------------
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows;
+using System.Windows.Controls;
+using System.Windows.Data;
+using System.Windows.Documents;
+using System.Windows.Input;
+using System.Windows.Media;
+using System.Windows.Media.Imaging;
+using System.Windows.Navigation;
+using System.Windows.Shapes;
+
+namespace WPF.PL
+{
+    /// <summary>
+    /// Interaction logic for MainWindow.xaml
+    /// </summary>
+    public partial class MainWindow : Window
+    {
+        public MainWindow()
+        {
+            InitializeComponent();
+	    //bal connection
+        }
+
+        private void buttonSubmit_Click(object sender, RoutedEventArgs e)
+        {
+		//insert code here
+		student calss object
+		S.StudentName=tbSname.Text
+		All the field same
+        }
+	delete
+		{
+				
+
+		}
+
+	update
+    }
+}
+
+
+-----------------------------------------------------------------------------------
+
+
+
+Winforms	DotNet - WinForms - DQ - Day 1
+
+
+WPF	DotNet - WPF - DQ - Day 1
+	DotNet - WPF - DQ - Day 2
+ADO.NET	DotNet - ADO.Net - DQ - Day 1
+	DotNet - ADO.Net - DQ - Day 2
+	DotNet - ADO.Net - DQ - Day 3
+LINQ and Entity Framework	DotNet - LINQ and Entity FW - DQ - Day 1
+	DotNet - LINQ and Entity FW - DQ - Day 2
+
+--------------------------------------------------------------------------------------------------------------
+Winforms	DN WinForms DQ S1 Day 1	DN WinForms DQ S2 Day 1
+WPF	DN WPF DQ S1 Day 1	DN WPF DQ S2 Day 1
+	DN WPF DQ S1 Day 2	DN WPF DQ S2 Day 2
+ADO.NET	DN ADO.Net DQ S1 Day 1	DN ADO.Net DQ S2 Day 1
+	DN ADO.Net DQ S1 Day 2	DN ADO.Net DQ S2 Day 2
+	DN ADO.Net DQ S1 Day 3	DN ADO.Net DQ S2 Day 3
+LINQ and Entity Framework	DN LINQ and Entity FW DQ S1 Day 1	DN LINQ and Entity FW DQ S2 Day 1
+	DN LINQ and Entity FW DQ S1 Day 2	DN LINQ and Entity FW DQ S2 Day 2
+
+<Window x:Class="WPF.PL.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WPF.PL"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="700" Width="700" Loaded="Window_Loaded">
+    <Grid>
+        <StackPanel>
+            <Label Margin="3" HorizontalAlignment="Center" >
+                Enter Student Details
+            </Label>
+
+            <Grid Margin="0,10,0,0" Focusable="False">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"></RowDefinition>
+                    <RowDefinition Height="Auto"></RowDefinition>
+                    <RowDefinition Height="Auto"></RowDefinition>
+                    <RowDefinition Height="Auto"></RowDefinition>
+                    <RowDefinition Height="Auto"></RowDefinition>
+                    <RowDefinition Height="Auto"></RowDefinition>
+                    <RowDefinition Height="Auto"></RowDefinition>
+                    <RowDefinition Height="Auto"></RowDefinition>
+
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"></ColumnDefinition>
+                    <ColumnDefinition Width="*" MinWidth="50" MaxWidth="800"></ColumnDefinition>
+
+                </Grid.ColumnDefinitions>
+
+                <Label x:Name="namelable" Content="Name" Margin="3" Grid.Row="1" Grid.Column="0" VerticalAlignment="Center"/>
+
+
+                <Label x:Name="Genderlbl" Content="Gender" Margin="3" Grid.Row="2" Grid.Column="0" VerticalAlignment="Center"/>
+
+                <Label x:Name="DOB_lbl" Content="DOB" Margin="3" Grid.Row="3" Grid.Column="0" VerticalAlignment="Center"/>
+                <TextBox x:Name="DOB_txt" TextWrapping="Wrap" Text="" Margin="3" Grid.Row="3" Grid.Column="1" VerticalAlignment="Center"/>
+
+                <Label x:Name="Fee_lbl" Content="Fee Paid" Margin="3" Grid.Row="4" Grid.Column="0" VerticalAlignment="Center"/>
+                <TextBox x:Name="Fee_txt" TextWrapping="Wrap" Text="" Margin="3" Grid.Row="4" Grid.Column="1" VerticalAlignment="Center"/>
+
+                <Label x:Name="MobileNo_lbl" Content="Mobile No" Margin="3" Grid.Row="5" Grid.Column="0" VerticalAlignment="Center"/>
+                <TextBox x:Name="Mobile_txt" TextWrapping="Wrap" Text="" Margin="3" Grid.Row="5" Grid.Column="1" VerticalAlignment="Center"/>
+
+                <Label x:Name="Email_lbl" Content="Email" Margin="3" Grid.Row="6" Grid.Column="0" VerticalAlignment="Center"/>
+                <TextBox x:Name="Email_txt" TextWrapping="Wrap" Text="" Margin="3" Grid.Row="6" Grid.Column="1" VerticalAlignment="Center"/>
+
+                <Button x:Name="buttonInsert"  Content="Insert" Margin="3,3,3,0" Grid.Row="7" Grid.Column="0" VerticalAlignment="Top" Width="81" Height="22" Click="buttonSubmit_Click"/>
+                <Button x:Name="buttonUpdate" Content="Update" Margin="43,3,481,3" Grid.Row="7" Grid.Column="1" VerticalAlignment="Center" Width="81" Height="22"/>
+                <Button x:Name="buttonDelete" Content="Delete" Margin="182,3,342,3" Grid.Row="7" Grid.Column="1" VerticalAlignment="Center" Width="81" Height="22"/>
+                <ComboBox x:Name="CmbName" Grid.Column="1" HorizontalAlignment="Left" Margin="3,7,0,0" VerticalAlignment="Top" Width="580" Grid.Row="1"/>
+                <RadioButton x:Name="RbMale" Content="Male" Grid.Column="1" HorizontalAlignment="Left" Margin="3,8,0,0" Grid.Row="2" VerticalAlignment="Top"/>
+                <RadioButton x:Name="RbFemale" Content="Female" Grid.Column="1" HorizontalAlignment="Left" Margin="136,10,0,0" Grid.Row="2" VerticalAlignment="Top"/>
+                <Button x:Name="BtnSelectAll" Content="SelectAll" Grid.Column="1" HorizontalAlignment="Left" Margin="318,3,0,0" Grid.Row="7" VerticalAlignment="Top" Width="75"/>
+            </Grid>
+            <DataGrid x:Name="Dg_Students" Height="193" Margin="0,0,102,0"/>
+        </StackPanel>
+    </Grid>
+    <Window.Resources>
+        <Style x:Key="ButtonStyle">
+            <Style.Setters>
+                <Setter Property="Control.Background"  Value="Yellow"/>
+                <!--><Setter Property="Button.Foreground"  Value="Green"/>-->
+            </Style.Setters>
+        </Style>
+        <Style TargetType="Label">
+            <Style.Triggers>
+                <Trigger Property="Control.IsMouseOver" Value="True">
+                    <Setter Property="Control.Background" Value="Green"/>
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+    </Window.Resources>
+</Window>
+
+----------------------------------------------------
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows;
+using System.Windows.Controls;
+using System.Windows.Data;
+using System.Windows.Documents;
+using System.Windows.Input;
+using System.Windows.Media;
+using System.Windows.Media.Imaging;
+using System.Windows.Navigation;
+using System.Windows.Shapes;
+using SMS.BLL;
+namespace WPF.PL
+{
+    /// <summary>
+    /// Interaction logic for MainWindow.xaml
+    /// </summary>
+    public partial class MainWindow : Window
+    {
+        StudentBLL bll = null;
+        
+        public MainWindow()
+        {
+            InitializeComponent();
+            bll = new StudentBLL();
+        }
+
+        public void populateUI()
+        {
+            try
+            {
+                dgStudents.ItemsSource = bll.GetAll();
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.StackTrace);
+            }
+         }
+
+
+
+        private void buttonSubmit_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void Window_Loaded(object sender, RoutedEventArgs e)
+        {
+            populateUI();
+
+        }
+    }
+}
+---------------------------------------------------------------
+
+<Window x:Class="WPF.PL.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WPF.PL"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="400" Width="525" Loaded="Window_Loaded">
+    <Grid>
+        <StackPanel>
+            <Label Margin="3" HorizontalAlignment="Center" >
+                Enter Student Details
+            </Label>
+
+            <Grid Margin="0,10,0,0" Focusable="False">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"></RowDefinition>
+                    <RowDefinition Height="Auto"></RowDefinition>
+                    <RowDefinition Height="Auto"></RowDefinition>
+                    <RowDefinition Height="Auto"></RowDefinition>
+                    <RowDefinition Height="Auto"></RowDefinition>
+                    <RowDefinition Height="Auto"></RowDefinition>
+                    <RowDefinition Height="Auto"></RowDefinition>
+                    <RowDefinition Height="Auto"></RowDefinition>
+
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"></ColumnDefinition>
+                    <ColumnDefinition Width="Auto"></ColumnDefinition>
+                    <ColumnDefinition Width="Auto"></ColumnDefinition> 
+                </Grid.ColumnDefinitions>
+                <TextBlock Text="Stud-Name: " Grid.Row="0" Grid.Column="0" Margin="2"></TextBlock>
+                <TextBlock Text="Gender: " Grid.Row="1" Grid.Column="0" Margin="2"></TextBlock>
+                <TextBlock Text="DOB: " Grid.Row="2" Grid.Column="0" Margin="2"></TextBlock>
+                <TextBlock Text="Fee-Paid: " Grid.Row="3" Grid.Column="0" Margin="2"></TextBlock>
+                <TextBlock Text="Mobile-No: " Grid.Row="4" Grid.Column="0" Margin="2"></TextBlock>
+                <TextBlock Text="Email: " Grid.Row="5" Grid.Column="0" Margin="2"></TextBlock>
+
+                <ComboBox Name="cmbStudName" Margin="2" Grid.Row="0" Grid.Column="1"></ComboBox>
+                <StackPanel Orientation="Horizontal" Margin="2" Grid.Row="1" Grid.Column="1" >
+                    <RadioButton Name="rbMale" Content="Male" Margin="2" ></RadioButton>
+                    <RadioButton Name="rbFeMale" Content="FeMale" Margin="2" ></RadioButton>
+                </StackPanel>
+
+                <DatePicker Name="dpDob" Margin="2" Grid.Row="2" Grid.Column="1"></DatePicker>
+                <TextBox Name="txtFeePaid" Margin="2" Grid.Row="3" Grid.Column="1"></TextBox>
+                <TextBox Name="txtMobile" Margin="2" Grid.Row="4" Grid.Column="1" ></TextBox>
+                <TextBox Name="txtEmail" Margin="2" Grid.Row="5" Grid.Column="1"></TextBox>
+
+                <Button Name="btnSelect" Content="Select All" Margin="2" Grid.Row="0" Grid.Column="2" ></Button>
+                <Button Name="btnUpdate" Content="Update" Margin="2" Grid.Row="1" Grid.Column="2" ></Button>
+                <Button Name="btnDelete" Content="Delete" Margin="2" Grid.Row="2" Grid.Column="2" ></Button>
+                <Button Name="btnInsert" Content="Insert" Margin="2" Grid.Row="3" Grid.Column="2" ></Button>
+                <!--<Label x:Name="idlable" Content="Student Id" Margin="3" Grid.Row="0" Grid.Column="0" VerticalAlignment="Center"/>
+                -->
+                <!--<TextBox x:Name="idtextBox" TextWrapping="Wrap" Text="TextBox" Margin="3" Grid.Row="0" Grid.Column="1" VerticalAlignment="Center"/>-->
+                <!--
+
+                <Label x:Name="namelable" Content="Name" Margin="3" Grid.Row="1" Grid.Column="0" VerticalAlignment="Center"/>
+                <TextBox x:Name="nametextBox" TextWrapping="Wrap" Text="TextBox" Margin="3" Grid.Row="1" Grid.Column="1" VerticalAlignment="Center"/>
+
+                <Label x:Name="Genderlbl" Content="Gender" Margin="3" Grid.Row="2" Grid.Column="0" VerticalAlignment="Center"/>
+                <TextBox x:Name="gendertbx" TextWrapping="Wrap" Text="TextBox" Margin="3" Grid.Row="2" Grid.Column="1" VerticalAlignment="Center"/>
+
+                <Label x:Name="DOB_lbl" Content="DOB" Margin="3" Grid.Row="3" Grid.Column="0" VerticalAlignment="Center"/>
+                <TextBox x:Name="DOB_txt" TextWrapping="Wrap" Text="TextBox" Margin="3" Grid.Row="3" Grid.Column="1" VerticalAlignment="Center"/>
+
+                <Label x:Name="Fee_lbl" Content="Fee Paid" Margin="3" Grid.Row="4" Grid.Column="0" VerticalAlignment="Center"/>
+                <TextBox x:Name="Fee_txt" TextWrapping="Wrap" Text="TextBox" Margin="3" Grid.Row="4" Grid.Column="1" VerticalAlignment="Center"/>
+
+                <Label x:Name="MobileNo_lbl" Content="Mobile No" Margin="3" Grid.Row="5" Grid.Column="0" VerticalAlignment="Center"/>
+                <TextBox x:Name="Mobile_txt" TextWrapping="Wrap" Text="TextBox" Margin="3" Grid.Row="5" Grid.Column="1" VerticalAlignment="Center"/>
+
+                <Label x:Name="Email_lbl" Content="Email" Margin="3" Grid.Row="6" Grid.Column="0" VerticalAlignment="Center"/>
+                <TextBox x:Name="Email_txt" TextWrapping="Wrap" Text="TextBox" Margin="3" Grid.Row="6" Grid.Column="1" VerticalAlignment="Center"/>-->
+
+                <!--<Button x:Name="buttonSubmit"  Content="SUBMIT" Margin="3,3,3,0" Grid.Row="7" Grid.Column="0" VerticalAlignment="Top" Width="81" Height="22" Click="buttonSubmit_Click"/>
+                <Button x:Name="buttonReset" Content="RESET" Margin="3" Grid.Row="7" Grid.Column="1" VerticalAlignment="Center" Width="81" Height="22"/>-->
+                
+            </Grid>
+            <DataGrid Name="dgStudents"  Width="400" Height="100" Margin="2" />
+        </StackPanel>
+        <!--<DataGrid Name="dgStudents" Width="400" Height="100" Margin="2"/>-->
+       
+
+    </Grid>
+   
+    <Window.Resources>
+        <Style x:Key="ButtonStyle">
+            <Style.Setters>
+                <Setter Property="Control.Background"  Value="Yellow"/>
+                <!--><Setter Property="Button.Foreground"  Value="Green"/>-->
+            </Style.Setters>
+        </Style>
+        <Style TargetType="Label">
+            <Style.Triggers>
+                <Trigger Property="Control.IsMouseOver" Value="True">
+                    <Setter Property="Control.Background" Value="Green"/>
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+    </Window.Resources>
+</Window>
+-------------------------------------
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace SMS_Entities
+{
+    public class Student
+    {
+        public int RollNo { get; set; }
+
+        public String StudName{ get; set; }
+
+        public String Gender { get; set; }
+
+        public DateTime DOB{ get; set; }
+
+        public double FeePaid { get; set; }
+
+        public String MobileNo { get; set; }
+
+        public String Email { get; set; }
+
+    }
+}
+---------------------------
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace SMS.Exceptions
+{
+    public class StudentException : Exception
+    {
+        public StudentException(String errMsg) : base(errMsg)
+        {
+               
+        }
+    }
+}
+---------------------------------
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using SMS.Exceptions;
+
+using SMS_Entities;
+
+using System.Data.SqlClient;
+using System.Configuration;
+
+namespace SMS.DAL
+{
+    public class StudentDAL
+    {
+        //SelectAll
+        SqlConnection cn = null;
+        SqlCommand cmd = null;
+        SqlDataReader dr = null;
+        public StudentDAL()
+        {
+            cn = new SqlConnection(ConfigurationManager.ConnectionStrings["cn1"].ConnectionString);
+        }
+
+        public List<Student> SelectAll()
+        {
+            List<Student> Studs = new List<Student>();
+            try
+            {
+                //cmd = new SqlCommand("select * from Lalith.Student", cn);
+
+                cmd = new SqlCommand("Lalith.USP_SelectAll_Student", cn);
+                cmd.CommandType = System.Data.CommandType.StoredProcedure;
+
+                cn.Open();
+                dr = cmd.ExecuteReader();
+                
+                while(dr.Read())
+                {
+                    Student s = new Student();
+                    s.RollNo =  Convert.ToInt32(dr[0]);
+                    s.StudName = dr[1].ToString();
+                    s.Gender = dr[2].ToString();
+                    s.DOB = Convert.ToDateTime(dr[3]);
+                    s.FeePaid = Convert.ToDouble(dr[4]);
+                    s.MobileNo = dr[5].ToString();
+                    s.Email = dr[6].ToString();
+
+                    Studs.Add(s);
+                }
+
+            }
+            catch (StudentException ex1)
+            {
+                throw ex1;
+            }
+            catch (Exception ex2)
+            {
+                throw ex2;
+            }
+            finally
+            {
+                dr.Close();
+                cn.Close();
+            }
+
+            return Studs;
+        }
+
+
+        public int Insert(Student stud)
+        {
+
+            int no = 0;
+            try
+            {
+                //cmd = new SqlCommand("insert into Lalith.Student(StudName, Gender, DOB, FeePaid, MobileNo, Email) values('" + stud.StudName + "', '" + stud.Gender + "', '" + stud.DOB + "', " + stud.FeePaid + ", '" + stud.MobileNo + "', '" + stud.Email + "')", cn);
+
+                cmd = new SqlCommand("Lalith.USP_Insert_Student", cn);
+                cmd.CommandType = System.Data.CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@StudName", stud.StudName);
+                cmd.Parameters.AddWithValue("@Gender", stud.Gender);
+                cmd.Parameters.AddWithValue("@DOB", stud.DOB);
+                cmd.Parameters.AddWithValue("@FeePaid", stud.FeePaid);
+                cmd.Parameters.AddWithValue("@MobileNo", stud.MobileNo);
+                cmd.Parameters.AddWithValue("@Email", stud.Email);
+                cn.Open();
+                no = cmd.ExecuteNonQuery();
+                
+            }
+            catch(StudentException ex1)
+            {
+                throw ex1;
+            }
+            catch(Exception ex2)
+            {
+                throw ex2;
+            }
+            finally
+            {
+                cn.Close();
+            }
+            return no;
+
+        }
+
+
+        public int Update(Student stud)
+        {
+            int no = 0;
+            try
+            {
+                //cmd = new SqlCommand("update Lalith.Student set StudName='"+stud.StudName+"', Gender = '"+stud.Gender+"',DOB = '"+stud.DOB+"',FeePaid = "+stud.FeePaid+",MobileNo = '"+stud.MobileNo+"',Email = '"+stud.Email+"' where RollNo = "+stud.RollNo, cn);
+
+                cmd = new SqlCommand("Lalith.USP_Update_Student", cn);
+                cmd.CommandType = System.Data.CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@RollNo", stud.RollNo);
+                cmd.Parameters.AddWithValue("@StudName", stud.StudName);
+                cmd.Parameters.AddWithValue("@Gender", stud.Gender);
+                cmd.Parameters.AddWithValue("@DOB", stud.DOB);
+                cmd.Parameters.AddWithValue("@FeePaid", stud.FeePaid);
+                cmd.Parameters.AddWithValue("@MobileNo", stud.MobileNo);
+                cmd.Parameters.AddWithValue("@Email", stud.Email);
+                cn.Open();
+                no = cmd.ExecuteNonQuery();
+
+            }
+            catch (StudentException ex1)
+            {
+                throw ex1;
+            }
+            catch (Exception ex2)
+            {
+                throw ex2;
+            }
+            finally
+            {
+                cn.Close();
+            }
+            return no;
+
+        }
+
+
+        public int Delete(int RollNo)
+        {
+            int no = 0;
+            try
+            {
+                // cmd = new SqlCommand("delete Lalith.Student where RollNo = " + RollNo, cn);
+
+                cmd = new SqlCommand("Lalith.USP_Delete_Student", cn);
+                cmd.CommandType = System.Data.CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@RollNo", RollNo);
+                cn.Open();
+                no = cmd.ExecuteNonQuery();
+
+            }
+            catch (StudentException ex1)
+            {
+                throw ex1;
+            }
+            catch (Exception ex2)
+            {
+                throw ex2;
+            }
+            finally
+            {
+                cn.Close();
+            }
+            return no;
+
+        }
+
+
+
+    }
+}
+-----------------------------------
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using SMS_Entities;
+using SMS.DAL;
+using SMS.Exceptions;
+
+namespace SMS.BLL
+{
+    public class StudentBLL
+    {
+        StudentDAL dal = null;
+
+        public StudentBLL()
+        {
+            dal = new StudentDAL();
+        }
+
+        public List<Student> GetAll()
+        {
+            List<Student> studs = null;
+            try
+            {
+                studs = dal.SelectAll();
+            }
+            catch(StudentException ex1)
+            {
+                throw ex1;
+            }
+            catch(Exception ex2)
+            {
+                throw ex2;
+            }
+            return studs;
+        }
+
+        public int Add(Student stud)
+        {
+
+            int no = 0;
+            try
+            {
+              no= dal.Insert(stud);
+            }
+            catch (StudentException ex1)
+            {
+                throw ex1;
+            }
+            catch (Exception ex2)
+            {
+                throw ex2;
+            }
+            return no;
+        }
+
+        public int Edit(Student stud)
+        {
+            int no = 0;
+            try
+            {
+               no = dal.Update(stud);
+            }
+            catch (StudentException ex1)
+            {
+                throw ex1;
+            }
+            catch (Exception ex2)
+            {
+                throw ex2;
+            }
+            return no;
+        }
+
+        public int Remove(int rollNo)
+        {
+            int no = 0;
+            try
+            {
+               no = dal.Delete(rollNo);
+            }
+            catch (StudentException ex1)
+            {
+                throw ex1;
+            }
+            catch (Exception ex2)
+            {
+                throw ex2;
+            }
+            return no;
+        }
+
+    }
+}
+-----------------------------------
+
+
+<Window x:Class="WPF.PL.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WPF.PL"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="400" Width="525" >
+    <Grid>
+        <StackPanel>
+            <Label Margin="3" HorizontalAlignment="Center" >
+                Enter Student Details
+            </Label>
+
+            <Grid Margin="0,10,0,0" Focusable="False">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"></RowDefinition>
+                    <RowDefinition Height="Auto"></RowDefinition>
+                    <RowDefinition Height="Auto"></RowDefinition>
+                    <RowDefinition Height="Auto"></RowDefinition>
+                    <RowDefinition Height="Auto"></RowDefinition>
+                    <RowDefinition Height="Auto"></RowDefinition>
+                    <RowDefinition Height="Auto"></RowDefinition>
+                    <RowDefinition Height="Auto"></RowDefinition>
+                    <RowDefinition Height="Auto"></RowDefinition>
+
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"></ColumnDefinition>
+                    <ColumnDefinition Width="Auto"></ColumnDefinition>
+                    <ColumnDefinition Width="Auto"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <TextBlock Text="Stud-Name: " Grid.Row="0" Grid.Column="0" Margin="2"></TextBlock>
+                <TextBlock Text="Gender: " Grid.Row="1" Grid.Column="0" Margin="2"></TextBlock>
+                <TextBlock Text="DOB: " Grid.Row="2" Grid.Column="0" Margin="2"></TextBlock>
+                <TextBlock Text="Fee-Paid: " Grid.Row="3" Grid.Column="0" Margin="2"></TextBlock>
+                <TextBlock Text="Mobile-No: " Grid.Row="4" Grid.Column="0" Margin="2"></TextBlock>
+                <TextBlock Text="Email: " Grid.Row="5" Grid.Column="0" Margin="2"></TextBlock>
+                <TextBlock Text="Stud-ID: " Grid.Row="6" Grid.Column="0" Margin="2"></TextBlock>
+                <ComboBox Name="cmbStudName" Margin="2" Grid.Row="0" Grid.Column="1" IsEditable="True"></ComboBox>
+                <StackPanel Orientation="Horizontal" Margin="2" Grid.Row="1" Grid.Column="1" >
+                    <RadioButton Name="rbMale" Content="Male" Margin="2" ></RadioButton>
+                    <RadioButton Name="rbFeMale" Content="FeMale" Margin="2" ></RadioButton>
+                </StackPanel>
+
+                <DatePicker Name="dpDob" Margin="2" Grid.Row="2" Grid.Column="1" Text="{Binding ElementName=cmbStudName, Path=SelectedItem.DOB}">
+                    
+                </DatePicker>
+                <TextBox Name="txtFeePaid" Margin="2" Grid.Row="3" Grid.Column="1" Text="{Binding ElementName=cmbStudName, Path=SelectedItem.FeePaid}"></TextBox>
+                <TextBox Name="txtMobile" Margin="2" Grid.Row="4" Grid.Column="1" Text="{Binding ElementName=cmbStudName, Path=SelectedItem.MobileNo}" ></TextBox>
+                <TextBox Name="txtEmail" Margin="2" Grid.Row="5" Grid.Column="1" Text="{Binding ElementName=cmbStudName, Path=SelectedItem.Email}"></TextBox>
+                <TextBox Name="cmbId" Margin="2" Grid.Row="6" Grid.Column="1" Text="{Binding ElementName=cmbStudName, Path=SelectedItem.RollNo}"></TextBox>
+                
+                <Button Name="btnSelect" Content="Select All" Margin="2,2,2,0" Grid.Row="0" Grid.Column="2" Height="22" VerticalAlignment="Top" Click="btnSelect_Click" ></Button>
+                <Button Name="btnUpdate" Content="Update" Margin="2,0,2,2" Grid.Row="1" Grid.Column="2" Click="btnUpdate_Click" />
+                <Button Name="btnDelete" Content="Delete" Margin="2" Grid.Row="2" Grid.Column="2" Click="btnDelete_Click" ></Button>
+                <Button Name="btnInsert" Content="Insert" Margin="2" Grid.Row="3" Grid.Column="2" Click="btnInsert_Click" ></Button>
+                <!--<Label x:Name="idlable" Content="Student Id" Margin="3" Grid.Row="0" Grid.Column="0" VerticalAlignment="Center"/>
+                -->
+                <!--<TextBox x:Name="idtextBox" TextWrapping="Wrap" Text="TextBox" Margin="3" Grid.Row="0" Grid.Column="1" VerticalAlignment="Center"/>-->
+                <!--
+
+                <Label x:Name="namelable" Content="Name" Margin="3" Grid.Row="1" Grid.Column="0" VerticalAlignment="Center"/>
+                <TextBox x:Name="nametextBox" TextWrapping="Wrap" Text="TextBox" Margin="3" Grid.Row="1" Grid.Column="1" VerticalAlignment="Center"/>
+
+                <Label x:Name="Genderlbl" Content="Gender" Margin="3" Grid.Row="2" Grid.Column="0" VerticalAlignment="Center"/>
+                <TextBox x:Name="gendertbx" TextWrapping="Wrap" Text="TextBox" Margin="3" Grid.Row="2" Grid.Column="1" VerticalAlignment="Center"/>
+
+                <Label x:Name="DOB_lbl" Content="DOB" Margin="3" Grid.Row="3" Grid.Column="0" VerticalAlignment="Center"/>
+                <TextBox x:Name="DOB_txt" TextWrapping="Wrap" Text="TextBox" Margin="3" Grid.Row="3" Grid.Column="1" VerticalAlignment="Center"/>
+
+                <Label x:Name="Fee_lbl" Content="Fee Paid" Margin="3" Grid.Row="4" Grid.Column="0" VerticalAlignment="Center"/>
+                <TextBox x:Name="Fee_txt" TextWrapping="Wrap" Text="TextBox" Margin="3" Grid.Row="4" Grid.Column="1" VerticalAlignment="Center"/>
+
+                <Label x:Name="MobileNo_lbl" Content="Mobile No" Margin="3" Grid.Row="5" Grid.Column="0" VerticalAlignment="Center"/>
+                <TextBox x:Name="Mobile_txt" TextWrapping="Wrap" Text="TextBox" Margin="3" Grid.Row="5" Grid.Column="1" VerticalAlignment="Center"/>
+
+                <Label x:Name="Email_lbl" Content="Email" Margin="3" Grid.Row="6" Grid.Column="0" VerticalAlignment="Center"/>
+                <TextBox x:Name="Email_txt" TextWrapping="Wrap" Text="TextBox" Margin="3" Grid.Row="6" Grid.Column="1" VerticalAlignment="Center"/>-->
+
+                <!--<Button x:Name="buttonSubmit"  Content="SUBMIT" Margin="3,3,3,0" Grid.Row="7" Grid.Column="0" VerticalAlignment="Top" Width="81" Height="22" Click="buttonSubmit_Click"/>
+                <Button x:Name="buttonReset" Content="RESET" Margin="3" Grid.Row="7" Grid.Column="1" VerticalAlignment="Center" Width="81" Height="22"/>-->
+
+            </Grid>
+            <DataGrid Name="dgStudents"  Width="400" Height="100" Margin="2" />
+        </StackPanel>
+        <!--<DataGrid Name="dgStudents" Width="400" Height="100" Margin="2"/>-->
+
+
+    </Grid>
+
+    <Window.Resources>
+        <Style x:Key="ButtonStyle">
+            <Style.Setters>
+                <Setter Property="Control.Background"  Value="Yellow"/>
+                <!--><Setter Property="Button.Foreground"  Value="Green"/>-->
+            </Style.Setters>
+        </Style>
+        <Style TargetType="Label">
+            <Style.Triggers>
+                <Trigger Property="Control.IsMouseOver" Value="True">
+                    <Setter Property="Control.Background" Value="Green"/>
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+    </Window.Resources>
+</Window>
+--------------------------------------------
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows;
+using System.Windows.Controls;
+using System.Windows.Data;
+using System.Windows.Documents;
+using System.Windows.Input;
+using System.Windows.Media;
+using System.Windows.Media.Imaging;
+using System.Windows.Navigation;
+using System.Windows.Shapes;
+using SMS.BLL;
+using SMS_Entities;
+namespace WPF.PL
+{
+    /// <summary>
+    /// Interaction logic for MainWindow.xaml
+    /// </summary>
+    public partial class MainWindow : Window
+    {
+        StudentBLL bll = null;
+        
+        public MainWindow()
+        {
+            InitializeComponent();
+            bll = new StudentBLL();
+        }
+
+        public void populateUI()
+        {
+            try
+            {
+                //dgStudents.ItemsSource = bll.GetAll();
+                //cmbStudName.ItemsSource = bll.GetAll();
+
+                // similar
+
+                List<Student> studs = bll.GetAll();
+                dgStudents.ItemsSource = studs;
+                cmbStudName.ItemsSource = studs;
+                cmbStudName.DisplayMemberPath = "StudName";
+
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.StackTrace);
+            }
+         }
+
+
+
+        private void buttonSubmit_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void Window_Loaded(object sender, RoutedEventArgs e)
+        {
+            populateUI();
+
+        }
+
+        private void btnSelect_Click(object sender, RoutedEventArgs e)
+        {
+            populateUI();
+        }
+
+        private void btnInsert_Click(object sender, RoutedEventArgs e)
+        {
+            
+            Student s = new Student();
+            s.StudName = cmbStudName.Text;
+           // s.Gender = "Male";
+            s.DOB = (DateTime)dpDob.SelectedDate;
+            s.FeePaid = double.Parse(txtFeePaid.Text);
+            s.MobileNo = txtMobile.Text;
+            s.Email = txtEmail.Text;
+            string g = string.Empty;
+            if ((bool)rbMale.IsChecked)
+            {
+                g = rbMale.Content.ToString();
+            }
+            else if ((bool)rbFeMale.IsChecked)
+            {
+                g = rbFeMale.Content.ToString();
+            }
+            s.Gender = g;
+            bll.Add(s);
+            MessageBox.Show("Inserted");
+        }
+
+        private void btnUpdate_Click(object sender, RoutedEventArgs e)
+        {
+            
+            Student s = (Student)cmbStudName.SelectedItem;
+            //s.RollNo = int.Parse(cmbId.Text); //No need of Roll No
+            s.StudName = cmbStudName.Text;
+            //s.Gender = "Male";
+            s.DOB = (DateTime)dpDob.SelectedDate;
+            s.FeePaid = double.Parse(txtFeePaid.Text);
+            s.MobileNo = txtMobile.Text;
+            s.Email = txtEmail.Text;
+
+            //Student s = new Student();
+            //s.RollNo = int.Parse(cmbId.Text);
+            //s.StudName = cmbStudName.Text;
+            ////s.Gender = "Male";
+            //s.DOB = (DateTime)dpDob.SelectedDate;
+            //s.FeePaid = double.Parse(txtFeePaid.Text);
+            //s.MobileNo = txtMobile.Text;
+            //s.Email = txtEmail.Text;
+
+            string g = string.Empty;
+            if((bool)rbMale.IsChecked)
+            {
+                g = rbMale.Content.ToString();
+            }
+            else if ((bool)rbFeMale.IsChecked)
+            {
+                g = rbFeMale.Content.ToString();
+            }
+            s.Gender = g;
+            bll.Edit(s);
+        }
+
+        private void btnDelete_Click(object sender, RoutedEventArgs e)
+        {
+
+            //int rollNo = int.Parse(cmbId.Text);
+            try
+            {
+                Student s = (Student)cmbStudName.SelectedItem;
+                bll.Remove(s.RollNo);
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+    }
+}
+--------------------------------------
+<?xml version="1.0" encoding="utf-8" ?>
+<configuration>
+    <startup> 
+        <supportedRuntime version="v4.0" sku=".NETFramework,Version=v4.5.2" />
+    </startup>
+  <connectionStrings>
+    <add name="cn1" connectionString="Data Source=NDAMSSQL\SQLILEARN;Initial Catalog=8Aug_Sipcot;User ID=sqluser;Password=sqluser" providerName="System.Data.SqlClient"/>
+  </connectionStrings>
+</configuration>
+---------------------------------------
+CREATE PROCEDURE [Lalith].[USP_SelectAll_Student]
+AS
+	SELECT * FROM Student
+RETURN 0
+
+
+CREATE PROCEDURE [Lalith].[USP_SelectById_Student]
+     @RollNo int
+AS
+	SELECT * FROM Student WHERE RollNo=@RollNo
+RETURN 0
+
+
+
+CREATE PROCEDURE [Lalith].[USP_Insert_Student]
+@StudName varchar(30),
+@Gender varchar(20), 
+@DOB datetime, 
+@FeePaid money,
+@MobileNo varchar(10),
+@Email varchar(30)
+AS
+	insert into Lalith.Student(StudName, Gender, DOB, FeePaid, MobileNo, Email) values(@StudName, @Gender, @DOB, @FeePaid, @MobileNo, @Email)
+RETURN 0
+
+CREATE PROCEDURE [Lalith].[USP_Update_Student]
+@RollNo int,
+@StudName varchar(30),
+@Gender varchar(20), 
+@DOB datetime, 
+@FeePaid money,
+@MobileNo varchar(10),
+@Email varchar(30)
+AS 
+update Lalith.Student set StudName=@StudName, Gender = @Gender, DOB = @DOB, FeePaid =@FeePaid, MobileNo = @MobileNo, Email = @Email where RollNo = @RollNo
+RETURN 0
+
+CREATE PROCEDURE [Lalith].[USP_Delete_Student]
+@RollNo int,
+
+AS 
+delete Lalith.Student where RollNo = @RollNo
+RETURN 0
+
+
+---------------------------------------------------------
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace LINQ_Examples
+{
+    public class Student
+    {
+        public int RollNo { get; set; }
+
+        public String StudName { get; set; }
+
+        public List<int> Marks = new List<int>();
+
+        public double FeePaid { get; set; }
+
+        public int Standard { get; set; } //1 - 4
+
+        public static List<Student> GetAllStudents()
+        {
+            List<Student> studs = new List<Student>();
+            Student s1 = new Student() { RollNo = 101, StudName = "Manish", FeePaid = 3400, Standard = 1, Marks = { 25, 35, 10, 45 } };
+            Student s2 = new Student() { RollNo = 112, StudName = "Lalith", FeePaid = 5400, Standard = 1, Marks = { 45, 32, 10, 35 } };
+            Student s3 = new Student() { RollNo = 123, StudName = "Gautam", FeePaid = 3400, Standard = 3, Marks = { 44, 45, 15, 45 } };
+            Student s4 = new Student() { RollNo = 134, StudName = "vikram", FeePaid = 2340, Standard = 3, Marks = { 23, 45, 14, 45 } };
+            studs.Add(s1);
+            studs.Add(s2);
+            studs.Add(s3);
+            studs.Add(s4);
+
+            return studs;
+        }
+
+        public override string ToString()
+        {
+
+            return RollNo+","+StudName+","+FeePaid+","+Standard;
+        }
+
+
+
+
+    }
+}
+------------------------------------------------------
+
+Code First
+
+*Ctreatw WPF Application with required UI
+
+*Add EF reference (using NuGet Package / Adding .dlls offline)
+
+*Add ADO.NET Entity Data Model(.edmx) DbContext, DbSet<T> 
+        
+	* Add connection string in APP,COnFIG file
+           <connectionStrings>
+                 <add name="cn1" connectionString="" providerName="System.Data.EntityClient" />
+           <connctionString/>
+	* creating POCO Class(Entity Class)
+		StudentCF_158050
+	* Create a classs inheriting from DbContext
+        	* Add ctor passing or accepting connection details
+        	* give name=cn1 in ctor
+		* Adding DbsSet<T> propert as collection which represents all rows from a table
+			---  public DbSet<StudentCF_158050> students { get; set;}
+
+	
+
+*You can write a code for any of the CRUD operation by referring DbContext class object (ex Entities)
+
+----------------------------------------------------------------
+
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows;
+using System.Windows.Controls;
+using System.Windows.Data;
+using System.Windows.Documents;
+using System.Windows.Input;
+using System.Windows.Media;
+using System.Windows.Media.Imaging;
+using System.Windows.Navigation;
+using System.Windows.Shapes;
+using SMS.BLL;
+using SMS.Entities;
+using SMS.Exceptions;
+
+namespace SMS.PL
+{
+    /// <summary>
+    /// Interaction logic for MainWindow.xaml
+    /// </summary>
+    public partial class MainWindow : Window
+    {
+        StudentBLL bll = null;
+
+        public MainWindow()
+        {
+            InitializeComponent();
+            bll = new StudentBLL();
+        }
+
+        public void PopulateUI()
+        {
+            try
+            {
+                List<Student> studs = bll.GetAll();
+                dgStudents.ItemsSource = studs;
+                cmbStudName.ItemsSource = studs;
+                cmbStudName.DisplayMemberPath = "StudName";
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.StackTrace);
+            }
+            
+        }
+
+        public string ValidateUI()
+        {
+            StringBuilder sb = new StringBuilder();          
+                       
+            if (cmbStudName.Text.Trim() == string.Empty || cmbStudName.Text.Trim() == null)            
+                sb.Append("Student-Name is Mandatory"+Environment.NewLine);
+            if (txtFeePaid.Text.Trim() == string.Empty || txtFeePaid.Text.Trim() == null)
+                sb.Append("Fees-Paid is Mandatory" + Environment.NewLine);
+            if (dpDOB.Text.Trim() == string.Empty || dpDOB.Text.Trim() == null)
+                sb.Append("DOB is Mandatory" + Environment.NewLine);
+            if (txtMobileNo.Text.Trim() == string.Empty || txtMobileNo.Text.Trim() == null)
+                sb.Append("Mobile-No is Mandatory" + Environment.NewLine);
+            if (txtEmail.Text.Trim() == string.Empty || txtEmail.Text.Trim() == null)
+                sb.Append("Email is Mandatory" + Environment.NewLine);
+
+            return sb.ToString();
+        }
+
+        private void btnInsert_Click(object sender, RoutedEventArgs e)
+        {
+
+            
+            string message = ValidateUI();
+
+            if(message == null)
+            {
+                Student stud = new Student();
+                stud.StudName = cmbStudName.Text;
+                stud.DOB = (DateTime)dpDOB.SelectedDate;
+                stud.FeePaid = double.Parse(txtFeePaid.Text);
+                stud.MobileNo = txtMobileNo.Text;
+                stud.Email = txtEmail.Text;
+
+                string g = string.Empty;
+                if ((bool)rbMale.IsChecked)
+                {
+                    g = rbMale.Content.ToString();
+                }
+                else if ((bool)rbFemale.IsChecked)
+                {
+                    g = rbFemale.Content.ToString();
+                }
+
+                try
+                {
+                    bll.Add(stud);
+                    MessageBox.Show("Inserted!");
+                }
+                catch (StudentException ex1)
+                {
+                    MessageBox.Show(ex1.Message);
+                }
+                catch (Exception ex2)
+                {
+                    MessageBox.Show(ex2.Message);
+                }
+            }
+            else
+            {
+                MessageBox.Show(message);
+            }
+           
+        }
+
+        private void btnUpdate_Click(object sender, RoutedEventArgs e)
+        {
+            Student stud =  (Student) cmbStudName.SelectedItem;
+            stud.StudName = cmbStudName.Text;
+            stud.DOB = (DateTime)dpDOB.SelectedDate;
+            stud.FeePaid = double.Parse(txtFeePaid.Text);
+            stud.MobileNo = txtMobileNo.Text;
+            stud.Email = txtEmail.Text;
+
+
+            string g = string.Empty;
+            if ((bool)rbMale.IsChecked)
+            {
+                g = rbMale.Content.ToString();
+            }
+            else if ((bool)rbFemale.IsChecked)
+            {
+                g = rbFemale.Content.ToString();
+            }
+            stud.Gender = g;
+            try
+            {
+                bll.Edit(stud);
+                MessageBox.Show("Updated!");
+            }
+            catch (StudentException ex1)
+            {
+                MessageBox.Show(ex1.Message);
+            }
+            catch (Exception ex2)
+            {
+                MessageBox.Show(ex2.Message);
+            }
+            PopulateUI();
+        }
+
+        private void btnDelete_Click(object sender, RoutedEventArgs e)
+        {           
+            try
+            {
+                Student stud = (Student)cmbStudName.SelectedItem;
+                bll.Remove(stud.RollNo);
+                MessageBox.Show("Deleted!");
+            }
+            catch (StudentException ex1)
+            {
+                MessageBox.Show(ex1.Message);
+            }
+            catch (Exception ex2)
+            {
+                MessageBox.Show(ex2.Message);
+            }
+        }
+
+        private void btnSelectAll_Click(object sender, RoutedEventArgs e)
+        {
+            List<Student> stud = bll.GetAll();
+            List<Student> s = new List<Student>();
+            var res1 = from line in stud
+                       where line.StudName.StartsWith("d")
+                       select line;
+
+            foreach (var item in res1 )
+            {
+                s.Add(item);
+                
+            }
+            dgStudents.ItemsSource = s;
+            //NextWindow form = new NextWindow();
+            //form.dg1Context.ItemsSource = bll.GetAll();
+            //form.Show();
+            //dgStudents.ItemsSource = bll.GetAll();
+        }
+
+        private void Window_Loaded(object sender, RoutedEventArgs e)
+        {
+            PopulateUI();
+        }
+    }
+}
+-------------------------------------------------
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows;
+using System.Windows.Controls;
+using System.Windows.Data;
+using System.Windows.Documents;
+using System.Windows.Input;
+using System.Windows.Media;
+using System.Windows.Media.Imaging;
+using System.Windows.Shapes;
+
+namespace MainWindow
+{
+    /// <summary>
+    /// Interaction logic for ProductView.xaml
+    /// </summary>
+    public partial class ProductView : Window
+    {
+        public ProductView()
+        {
+            InitializeComponent();
+        }
+
+        private void Window_Loaded(object sender, RoutedEventArgs e)
+        {
+            Entities dbContext = new Entities();
+
+            ///<summary>
+            ///Getting Details from Dtatbase using dbContext from Entities Class
+            /// </summary>
+
+            List<Product> prods = dbContext.Products.ToList();
+
+            ///<summary>
+            ///New list to store the values of the objects
+            /// </summary>
+
+            List<Product> p = new List<Product>();
+
+            ///<summary>
+            ///LINQ query to get the required values
+            /// </summary>
+            var res1 = from pro in prods
+                       where pro.ProductName.StartsWith("Ch")
+                       select pro;
+
+            foreach (var item in res1)
+            {
+                p.Add(item);
+            }
+
+            //Displaying the values in the data Grid
+            dgProduct.ItemsSource = p;
+
+        }
+    }
+}
+
+----------------------------------------------------
+
+
+<Window x:Class="MainWindow.ProductView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:MainWindow"
+        mc:Ignorable="d"
+        Title="ProductView" Height="300" Width="500" Loaded="Window_Loaded">
+    <Window.Resources>
+        <Style TargetType="DataGridCell">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="DataGridCell">
+                        
+                        <Border Name="border"
+			Background="Transparent"
+			BorderBrush="Transparent"
+			BorderThickness="1"
+			SnapsToDevicePixels="True">
+
+                            <ContentPresenter SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" />
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </Window.Resources>
+    
+    <Grid>
+        <DataGrid Name="dgProduct" Height="200" Width="400" Background="PowderBlue" FontFamily="Times New Roman" Foreground="Brown"></DataGrid>
+    </Grid>
+</Window>
+------------------------------------------------------------------
+------------------------------------------------------------------
+------------------------------------------------------------------
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace PM_Entities
+{
+
+    /// <summary>
+    /// Class For Product and with getters and setters
+    /// </summary>
+    public class Product
+    {
+        public int ProductId { get; set; }
+
+        public String Productname{ get; set; }
+
+        public String ProductDescription { get; set; } 
+
+        public double Productprice { get; set; }
+    }
+}
+
+------------------------------------------
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace PM_Exceptions
+{
+    public class ProductException : Exception
+    {
+        public ProductException(String errmsg) : base(errmsg)
+        {
+                ///<summary>
+                ///Constructor for Exception and passing it to the Base Class
+                /// </summary>
+
+        }
+    }
+}
+
+---------------------------------------------
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using PM_Entities;
+using PM_Exceptions;
+
+using System.Configuration;
+using System.Data.SqlClient;
+
+namespace PM_DAL
+{
+    public class ProductDAL
+    {
+        /// <summary>
+        /// Defining the Database Connectivity Variables
+        /// </summary>
+        SqlConnection cn = null;
+        SqlCommand cmd = null;
+        SqlDataReader dr = null;
+
+        /// <summary>
+        /// Passing the connection
+        /// </summary>
+        public ProductDAL()
+        {
+            cn = new SqlConnection(ConfigurationManager.ConnectionStrings["cn1"].ConnectionString);
+        }
+
+        /// <summary>
+        /// selecting the details of the table
+        /// </summary>
+        /// <returns></returns>
+        public List<Product> SelectAll()
+        {
+            List<Product> Prod = new List<Product>();
+            try
+            {
+                //cmd = new SqlCommand("select * from Lalith.Product", cn);
+
+                cmd = new SqlCommand("Lalith.USP_SELECT_PRODUCT", cn);
+                cmd.CommandType = System.Data.CommandType.StoredProcedure;
+
+                cn.Open();
+                dr = cmd.ExecuteReader();
+
+                while(dr.Read())
+                {
+                    Product p = new Product();
+                    p.ProductId = Convert.ToInt32(dr[0]);
+                    p.Productname = dr[1].ToString();
+                    p.ProductDescription = dr[2].ToString();
+                    p.Productprice = Convert.ToDouble(dr[3]);
+
+                    Prod.Add(p);
+                }
+
+            }
+            catch(ProductException ex1)
+            {
+                throw ex1;
+            }
+            catch(Exception ex2)
+            {
+                throw ex2;
+            }
+            finally
+            {
+                dr.Close();
+                cn.Close();
+            }
+            return Prod;
+        }
+
+        /// <summary>
+        /// Inserting function to insert in the database
+        /// </summary>
+       
+        /// <returns></returns>
+        public int Insert(Product Prod)
+        {
+            int no = 0;
+            try
+            {
+                cmd = new SqlCommand("Lalith.USP_INSERT_PRODUCT", cn);
+                cmd.CommandType = System.Data.CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@ProdName", Prod.Productname);
+                cmd.Parameters.AddWithValue("@ProdDescription", Prod.ProductDescription);
+                cmd.Parameters.AddWithValue("@ProdPrice", Prod.Productprice);
+                cn.Open();
+                no = cmd.ExecuteNonQuery();
+
+            }
+            catch (ProductException ex1)
+            {
+                throw ex1;
+            }
+            catch (Exception ex2)
+            {
+                throw ex2;
+            }
+            finally
+            {
+                cn.Close();
+            }
+            return no;
+        }
+
+    }
+}
+-----------------------------------------------------
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+using PM_DAL;
+using PM_Entities;
+using PM_Exceptions;
+using System.Text.RegularExpressions;
+
+namespace PM_BLL
+{
+    public class ProductBLL
+    {
+        /// <summary>
+        /// Bll For all Logic Fuctions and Validations
+        /// </summary>
+        ProductDAL dal = null;
+
+        public ProductBLL()
+        {
+            dal = new ProductDAL();
+        }
+
+        public static bool Validate(Product Prod)
+        {
+            bool validated = true;
+            StringBuilder message = new StringBuilder();
+
+            try
+            {
+                if (!Regex.IsMatch(Prod.Productname, "[A-Z][a-z]+"))
+                {
+                    message.Append("Product Name should start with capital alphabet and it should have alphabets only\n");
+                    validated = false;
+                }
+
+                if(Prod.Productprice < 0)
+                {
+                    message.Append("Product price should not be lesas than 0\n");
+                    validated = false;
+                }
+
+                if (validated == false)
+                    throw new ProductException(message.ToString());
+            }
+            catch(ProductException ex)
+            {
+                throw ex;
+            }
+            catch(SystemException ex)
+            {
+                throw ex;
+            }
+
+            return validated;
+        }
+
+        public List<Product> GetAll()
+        {
+            List<Product> prod = null;
+            try
+            {
+               prod = dal.SelectAll();
+            }
+            catch (ProductException ex1)
+            {
+                throw ex1;
+            }
+            catch (Exception ex2)
+            {
+                throw ex2;
+            }
+            return prod;
+        }
+
+        public int Add(Product prod)
+        {
+            int no = 0;
+            try
+            {
+                if (Validate(prod))
+                    no = dal.Insert(prod);
+            }
+            catch (ProductException ex1)
+            {
+                throw ex1;
+            }
+            catch (Exception ex2)
+            {
+                throw ex2;
+            }
+            return no;
+        }
+
+    }
+}
+
+------------------------------------------------
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows;
+using System.Windows.Controls;
+using System.Windows.Data;
+using System.Windows.Documents;
+using System.Windows.Input;
+using System.Windows.Media;
+using System.Windows.Media.Imaging;
+using System.Windows.Navigation;
+using System.Windows.Shapes;
+
+using PM_BLL;
+using PM_Entities;
+using PM_Exceptions;
+
+namespace WPF_PL
+{
+    /// <summary>
+    /// Interaction logic for MainWindow.xaml
+    /// </summary>
+    
+    public partial class MainWindow : Window
+    {
+        ProductBLL bll = null;
+        public MainWindow()
+        {
+            InitializeComponent();
+            bll = new ProductBLL();
+        }
+
+        /// <summary>
+        /// For Populating the DataGrid
+        /// </summary>
+        public void PopulateUI()
+        {
+            try
+            {
+                List<Product> prods = bll.GetAll();
+                dgProducts.ItemsSource = prods;
+
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.StackTrace);
+            }
+        }
+        /// <summary>
+        /// Validation of not null
+        /// </summary>
+        /// <returns></returns>
+
+        public string ValidateUI()
+        {
+            StringBuilder sb = new StringBuilder();
+
+            if ((txtProdName.Text).ToString() == string.Empty || (txtProdName.Text).ToString() == null)
+                sb.Append("Product-Name is Mandatory" + Environment.NewLine);
+            if ((txtDescription.Text).ToString() == string.Empty || (txtDescription.Text).ToString() == null)
+                sb.Append("Description is Mandatory" + Environment.NewLine);
+            if ((txtPrice.Text).ToString() == string.Empty || (txtPrice.Text).ToString() == null)
+                sb.Append("Price is Mandatory" + Environment.NewLine);
+
+            return sb.ToString();
+           
+        }
+        /// <summary>
+        /// Inserting data function on button Click 
+        /// </summary>
+       
+
+        private void btnInsert_Click(object sender, RoutedEventArgs e)
+        {
+            string message = null;
+
+            if(message == null)
+            {
+                Product prod = new Product();
+                prod.Productname = txtProdName.Text;
+                prod.ProductDescription = txtDescription.Text;
+                prod.Productprice = double.Parse(txtPrice.Text);
+
+                try
+                {
+                    bll.Add(prod);
+                    
+                    MessageBox.Show("Inserted");
+                    PopulateUI();
+                }
+                catch(ProductException ex1)
+                {
+                    MessageBox.Show(ex1.Message);
+                }
+                catch(Exception ex2)
+                {
+                    MessageBox.Show(ex2.Message);
+                }
+            }
+            else
+            {
+                MessageBox.Show(message);
+            }
+        }
+
+        /// <summary>
+        /// For On Start of the Solution
+        /// </summary>
+       
+        private void Window_Loaded(object sender, RoutedEventArgs e)
+        {
+            PopulateUI();
+        }
+    }
+}
+-------------------------------------------------------------------
+
+<Window x:Class="WPF_PL.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WPF_PL"
+        mc:Ignorable="d"
+        Title="Add New Product" Height="450" Width="525" Loaded="Window_Loaded">
+   
+        <StackPanel>
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"></RowDefinition>
+                    <RowDefinition Height="Auto"></RowDefinition>
+                    <RowDefinition Height="Auto"></RowDefinition>
+                    <RowDefinition Height="Auto"></RowDefinition>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"></ColumnDefinition>
+                    <ColumnDefinition Width="Auto"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+            <TextBlock Text="Product Name: " Grid.Row="0" Grid.Column="0" Margin="5"></TextBlock>
+            <TextBlock Text="Description: " Grid.Row="1" Grid.Column="0" Margin="5"></TextBlock>
+            <TextBlock Text="Price: " Grid.Row="2" Grid.Column="0" Margin="5"></TextBlock>
+
+            <TextBox Name="txtProdName" Margin="5" Grid.Row="0" Grid.Column="1" Width="200"></TextBox>
+            <TextBox Name="txtDescription" Margin="5" Grid.Row="1" Grid.Column="1" Width="200"></TextBox>
+            <TextBox Name="txtPrice" Margin="5" Grid.Row="2" Grid.Column="1" Width="200"></TextBox>
+            <Button Name="btnInsert" Content="Insert Product" Margin="10" Grid.Row="4" Grid.Column="1" Width="150" Click="btnInsert_Click"></Button>
+        </Grid>
+            
+        <DataGrid Name="dgProducts" Width="400" Height="170" Margin="20"></DataGrid>
+        </StackPanel>
+    
+</Window>
+-----------------------------------------------
+<?xml version="1.0" encoding="utf-8" ?>
+<configuration>
+    <startup> 
+        <supportedRuntime version="v4.0" sku=".NETFramework,Version=v4.5.2" />
+    </startup>
+  <connectionStrings>
+    <add name="cn1" connectionString="Data Source=NDAMSSQL\SQLILEARN;Initial Catalog=8Aug_Sipcot;Persist Security Info=True;User ID=sqluser;Password=sqluser" providerName="System.Data.SqlClient"/>
+  </connectionStrings>
+</configuration>
